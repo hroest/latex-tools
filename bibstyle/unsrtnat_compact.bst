@@ -228,7 +228,8 @@ FUNCTION {format.names}
                 'skip$
               if$
               t "others" =
-                { " et~al." * }
+                % use italic "et al."
+                { " \textit{et~al}." * }
                 { " and " * t * }
               if$
             }
