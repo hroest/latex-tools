@@ -221,7 +221,19 @@ FUNCTION {format.names}
     { namesleft #0 > }
     { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
       nameptr #1 >
-        { namesleft #1 >
+        { 
+           % show truncated author list
+           nameptr #1
+           #1 + = % number of authors in truncated author list
+           numnames #0
+           #5 + % number of authors after which truncated list is shown
+           > and
+             { "others" 't :=
+               #1 'namesleft := }
+             'skip$
+           if$
+
+          namesleft #1 > 
             { ", " * t * }
             { numnames #2 >
                 { "," * }
