@@ -253,7 +253,7 @@ FUNCTION {format.names}
 
           namesleft #1 > 
             { ", " * t * }
-            { numnames #2 >
+            { numnames #1 > 
                 % Separate "et al." by space or by , (then use ", ")
                 { " " * }
                 'skip$
