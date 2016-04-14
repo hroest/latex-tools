@@ -213,6 +213,13 @@ FUNCTION {emphasize}
   if$
 }
 
+FUNCTION {embolden}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "{\bf " swap$ * "}" * }
+  if$
+}
+
 INTEGERS { nameptr namesleft numnames }
 
 FUNCTION {format.names}
@@ -566,7 +573,8 @@ FUNCTION {format.eid}
 }
 
 FUNCTION {format.vol.num.pages}
-{ volume field.or.null
+{ 
+  volume embolden field.or.null
   number empty$
     'skip$
     { "\penalty0 (" number * ")" * *
