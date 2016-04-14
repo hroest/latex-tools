@@ -237,7 +237,8 @@ FUNCTION {format.names}
           namesleft #1 > 
             { ", " * t * }
             { numnames #2 >
-                { "," * }
+                % Separate "et al." by space or by , (then use ", ")
+                { " " * }
                 'skip$
               if$
               t "others" =
