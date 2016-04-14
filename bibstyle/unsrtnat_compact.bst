@@ -586,11 +586,13 @@ FUNCTION {format.vol.num.pages}
       if$
     }
   if$
+  % Print page numbers
   pages empty$
     'skip$
     { duplicate$ empty$
         { pop$ format.pages }
-        { ":\penalty0 " * pages n.dashify * }
+        % separate page numbers by comma (default is :)
+        { ", \penalty0 " * pages n.dashify * }
       if$
     }
   if$
