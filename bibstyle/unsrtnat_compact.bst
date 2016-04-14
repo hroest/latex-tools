@@ -439,8 +439,16 @@ FUNCTION {n.dashify}
   while$
 }
 
+% add parenthesis
+FUNCTION {paren}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "(" swap$ * ")" * }
+  if$
+}
+
 FUNCTION {format.date}
-{ year duplicate$ empty$
+{ year paren duplicate$ empty$
     { "empty year in " cite$ * warning$
        pop$ "" }
     'skip$
