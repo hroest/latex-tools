@@ -222,7 +222,13 @@ FUNCTION {format.names}
   numnames 'namesleft :=
     { namesleft #0 > }
     { s nameptr 
-      "{ff~}{vv~}{ll}{, jj}"
+      % Format names: 
+      % ff = full first name
+      % ll = full last name
+      % vv = prefix ("von")
+      % jj = suffix (III)
+      % "{ff~}{vv~}{ll}{, jj}"
+      "{vv~}{ll}{, f.}{, jj}"
       format.name$
       't :=
       nameptr #1 >
