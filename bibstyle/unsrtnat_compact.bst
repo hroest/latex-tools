@@ -90,7 +90,8 @@ STRINGS { s t }
 FUNCTION {output.nonnull}
 { 's :=
   output.state mid.sentence =
-    { ", " * write$ }
+    % use space to separate the different sentences between journal and issue for example
+    { " " * write$ }
     { output.state after.block =
         { add.period$ write$
           newline$
