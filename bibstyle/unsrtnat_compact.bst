@@ -576,16 +576,16 @@ FUNCTION {format.vol.num.pages}
 { 
   % Print journal volume in bold
   volume embolden field.or.null
-  % Print journal number in parenthesis
-  number empty$
-    'skip$
-    { "\penalty0 (" number * ")" * *
-      volume empty$
-        { "there's a number but no volume in " cite$ * warning$ }
-        'skip$
-      if$
-    }
-  if$
+  %  % Print journal number in parenthesis
+  %  number empty$
+  %    'skip$
+  %    { "\penalty0 (" number * ")" * *
+  %      volume empty$
+  %        { "there's a number but no volume in " cite$ * warning$ }
+  %        'skip$
+  %      if$
+  %    }
+  %  if$
   % Print page numbers
   pages empty$
     'skip$
