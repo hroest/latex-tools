@@ -574,7 +574,9 @@ FUNCTION {format.eid}
 
 FUNCTION {format.vol.num.pages}
 { 
+  % Print journal volume in bold
   volume embolden field.or.null
+  % Print journal number in parenthesis
   number empty$
     'skip$
     { "\penalty0 (" number * ")" * *
