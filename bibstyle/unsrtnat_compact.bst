@@ -58,6 +58,7 @@ ENTRY
     isbn
     issn
     journal
+    shortjournal
     key
     month
     note
@@ -719,7 +720,14 @@ FUNCTION {article}
   format.title "title" output.check
   new.block
   crossref missing$
-    { journal emphasize "journal" output.check
+    { 
+
+      %% check whether shortjournal is empty, if yes then use regular journal
+      shortjournal empty$
+      { journal emphasize "journal" output.check }
+      { shortjournal emphasize "shortjournal" output.check }
+      if$
+
       eid empty$
         { format.vol.num.pages output }
         { format.vol.num.eid output }
