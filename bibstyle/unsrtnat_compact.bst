@@ -1,5 +1,5 @@
-%% File: `unsrtnat.bst'
-%% A modification of `unsrt.bst' for use with natbib package 
+%% File: `unsrtnat_compact.bst'
+%% A modification of `unsrtnat.bst' for use with natbib package to be more compact and support biology-style journals
 %%
 %% Copyright 1993-2007 Patrick W Daly
 %% Max-Planck-Institut f\"ur Sonnensystemforschung
@@ -37,7 +37,7 @@
  %
  % Includes field URL for Internet addresses.
  %
- % Includes field DOI for Digital Object Idenfifiers.
+ % Includes field DOI for Digital Object Identifiers.
  %
  % Works best with the url.sty package of Donald Arseneau.
  %
